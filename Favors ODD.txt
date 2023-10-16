@@ -1,0 +1,213 @@
+﻿Favors ODD
+
+
+1. Purpose and patterns
+
+
+The purpose of this model is to have a better understanding of the cognitive process of a favor between two individuals. The purpose of this model will be shown by reflecting the campus of Vassar college and using a problem of picking up packages at the edge of campus.
+
+
+Patterns: Within the model, there will be patterns of selfishness and generosity all within a system where requests and favors can be given and fulfilled.
+
+
+2. Entities, state variables, and scales
+
+
+Entities: 
+
+
+People Agents: Mostly students, who have the main purpose of receiving and picking up packages. Within the process of picking up these packages, they will also have the ability to choose how this is done, through the favors delivery service. With cognitive models, these agents will each have their own tendencies in order to model life.
+
+
+Favor Links: when an offer is given by a person and there is a request available, a link will occur.
+
+
+State Variables:
+
+
+The observer is a single entity that controls the model as a whole. The global variables and state of the entire model are dependent on the observer. Its state variables are as follows.
+
+
+
+
+Variable Name
+	Variable Type and Units
+	Meaning
+	current-year
+	Unit of time
+	The current year
+	current-month
+	Unit of time
+	The current month
+	current-day
+	Unit of time
+	The current day
+	current-hour
+	Unit of time
+	The current hour
+	
+
+The time units down to the hourly clock help the agents understand what task they are currently doing, and whether or not they are free to pick up a package.
+
+
+People Agents:
+
+
+
+
+Variable Name
+	Variable Type and Units
+	Meaning
+	package-available?
+	boolean
+	Package Available to be picked up
+	carry-self? 
+	boolean
+	Is this person carrying their own package
+	carry-theirs?
+	boolean
+	Is this person carrying the package of a favor
+	dorm
+	int/string
+	Which building does this person live in
+	state
+	string
+	Used in the state machine of a person’s decisions
+	delivery-spot
+	int/string
+	Derived from dorm of the other-end of the favor
+	request?
+	boolean
+	Is this person making a request
+	offer?
+	boolean 
+	Is this person making an offer
+	request-number 
+	int
+	Number of the request
+	offer-number
+	int
+	Derived from request number of other-end of favor link
+	
+
+Favor Links:
+
+
+
+
+Variable Name 
+	Variable Type and Units
+	Meaning
+	
+
+	
+
+	
+
+	
+
+Scales: 
+
+
+The goal is to model the Vassar campus, so that tests can be done with the student population. Therefore, size geographically will come from a campus map and a 
+
+
+3. Process overview and scheduling
+
+
+Processes:
+
+
+Favor forming: currently, if a package is available for a person they will decide how to obtain it in three ways: making a request, getting it themselves, or making an offer(they will also pick up their own package). Once an offer is made, if there is a request that has not been filled then a link will be made between the two agents making the request and offer. Through the link, the identification and specifications of the delivery will be made.
+
+
+Package pickup: when a person is in the process of picking up a package and they step foot in the “central receiving” zone, they will complete a pickup. Making carry-self? And carry-theirs? True depending if they were only picking up for themselves or fulfilling a favor.
+
+
+Package dropoff: with similar logic to pick up, if there is a package in a person’s possession that needs to be dropped off and they are in the zone to drop off then the appropriate carry? Variable will be changed.
+
+
+Schedule: 
+The schedule of this program will run on a simple year long calendar. This will be specific down to the hour. (number of ticks to be decided)
+
+
+4. Design concepts
+
+
+Basic principles: 
+This model is made to simulate a campus of students with an offcampus mail package location that is generally out of the way of the students. The ecosystem within the model is made through favors that these students do for one another by picking up each other’s packages. The most basic principles to be analyzed through the model include the types of dispositions of students and likelihood of favor completion, and the ideas surrounding returning a favor.
+
+
+Emergence:
+* Friend groups of favor doers
+* Emergence of top tier favor doers
+
+
+Adaption:
+* How people change their availability to perform favors based on their own favor receipt
+* How a gratitudidness vs an obligatory outlook on a favor received changes a person’s view
+* How someone can become more predetermined to perform favors 
+
+
+Objectives:
+* Learn more about timeline of returning a favor
+* Exploring gratitude vs obligation within the returning of a favor
+
+
+Learning:
+* People who do not do favors learn to have a more giving spirit
+* How are favors from a someone familiar vs a stranger viewed?
+
+
+Prediction:
+
+
+Sensing:
+* Most interactions will be imagined to have been originally formed by the use of a campus wide mobile “app” that connects the “offers” with the “requests”
+
+
+Interaction:
+* Interactions include all processes related to a favor
+   * Connecting through links to share personal information relating to pickup and delivery
+   * Connecting through same “favor number”
+
+
+Stochasticity:
+* The disposition of an average student to perform a favor
+* The likelihood of a response to a favor
+* Location of individual students
+* Locations of students within a “friend group”
+* Schedule of a student
+* Package delivery
+
+
+Collectives:
+* A collective could be a group of college friends
+   * A group of student who live closely as well
+* The people who have a more giving spirit, holding the ecosystem up all on their own because they live to please and help 
+
+
+Observation:
+* 
+
+5. Initialization
+
+
+Patches: the main initialization will be the map of the vassar campus. Currently, within the base model there are multiple houses and dorms and apartments
+
+
+Turtles: randomization of most variables within the student agents
+
+
+No links are originally initialized
+
+
+6. Input data
+The data to be originally input includes a digital map of the vassar campus and other data relating to the student population, as well as a general average disposition of a college student. We will attempt to model how the real life “favor economy” works
+
+
+7. Submodels
+Possible submodels include how the favor economy work within a specific dorm building or between friends as both variables affect the willingness of someone to perform a favor
+
+
+8. Findings and conclusions
